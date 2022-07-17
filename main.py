@@ -1,24 +1,12 @@
-from pprint import pprint
-# читаем адресную книгу в формате CSV в список contacts_list
-import csv
-import os
+import edit
 
 if __name__ == "__main__":
     file = "phonebook_raw.csv"
-    path = os.path.abspath('Text/' + file)
-    with open(path, encoding='utf-8') as f:
-        rows = csv.reader(f, delimiter=",")
-        contacts_list = list(rows)
-    contacts_list_new = []
-    for item in contacts_list:
-        for var in item[0:2]:
-            if var != '':
+    file1 = "phonebook1_raw.csv"
 
-
-
-
-
-
-
+    contacts_list = edit.create_contact_list(file)
+    contacts_list_new = edit.edit_name_telephone(contacts_list)
+    unic_list = edit.unic_list(contacts_list_new)
+    edit.create_new_unic_list(file1, unic_list)
 
 
